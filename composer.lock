@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "42fc3b7c4c24121a811c62dc5bbbbdd7",
+    "content-hash": "07521982629fb3bfa93b475543e0887f",
     "packages": [
         {
             "name": "bentools/cartesian-product",
@@ -466,16 +466,16 @@
         },
         {
             "name": "doctrine/dbal",
-            "version": "3.8.2",
+            "version": "3.8.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "a19a1d05ca211f41089dffcc387733a6875196cb"
+                "reference": "db922ba9436b7b18a23d1653a0b41ff2369ca41c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/a19a1d05ca211f41089dffcc387733a6875196cb",
-                "reference": "a19a1d05ca211f41089dffcc387733a6875196cb",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/db922ba9436b7b18a23d1653a0b41ff2369ca41c",
+                "reference": "db922ba9436b7b18a23d1653a0b41ff2369ca41c",
                 "shasum": ""
             },
             "require": {
@@ -491,12 +491,12 @@
                 "doctrine/coding-standard": "12.0.0",
                 "fig/log-test": "^1",
                 "jetbrains/phpstorm-stubs": "2023.1",
-                "phpstan/phpstan": "1.10.57",
+                "phpstan/phpstan": "1.10.58",
                 "phpstan/phpstan-strict-rules": "^1.5",
                 "phpunit/phpunit": "9.6.16",
                 "psalm/plugin-phpunit": "0.18.4",
                 "slevomat/coding-standard": "8.13.1",
-                "squizlabs/php_codesniffer": "3.8.1",
+                "squizlabs/php_codesniffer": "3.9.0",
                 "symfony/cache": "^5.4|^6.0|^7.0",
                 "symfony/console": "^4.4|^5.4|^6.0|^7.0",
                 "vimeo/psalm": "4.30.0"
@@ -559,7 +559,7 @@
             ],
             "support": {
                 "issues": "https://github.com/doctrine/dbal/issues",
-                "source": "https://github.com/doctrine/dbal/tree/3.8.2"
+                "source": "https://github.com/doctrine/dbal/tree/3.8.3"
             },
             "funding": [
                 {
@@ -575,7 +575,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-02-12T18:36:36+00:00"
+            "time": "2024-03-03T15:55:06+00:00"
         },
         {
             "name": "doctrine/deprecations",
@@ -1163,16 +1163,16 @@
         },
         {
             "name": "doctrine/orm",
-            "version": "2.18.1",
+            "version": "2.19.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/orm.git",
-                "reference": "e6eef1a97d41f1ee244b6e69d7359d00cb3e4c4a"
+                "reference": "a809a71aa6a233a6c82e68ebaaf8954adc4998dc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/orm/zipball/e6eef1a97d41f1ee244b6e69d7359d00cb3e4c4a",
-                "reference": "e6eef1a97d41f1ee244b6e69d7359d00cb3e4c4a",
+                "url": "https://api.github.com/repos/doctrine/orm/zipball/a809a71aa6a233a6c82e68ebaaf8954adc4998dc",
+                "reference": "a809a71aa6a233a6c82e68ebaaf8954adc4998dc",
                 "shasum": ""
             },
             "require": {
@@ -1201,14 +1201,14 @@
                 "doctrine/annotations": "^1.13 || ^2",
                 "doctrine/coding-standard": "^9.0.2 || ^12.0",
                 "phpbench/phpbench": "^0.16.10 || ^1.0",
-                "phpstan/phpstan": "~1.4.10 || 1.10.35",
+                "phpstan/phpstan": "~1.4.10 || 1.10.59",
                 "phpunit/phpunit": "^7.5 || ^8.5 || ^9.6",
                 "psr/log": "^1 || ^2 || ^3",
                 "squizlabs/php_codesniffer": "3.7.2",
                 "symfony/cache": "^4.4 || ^5.4 || ^6.4 || ^7.0",
                 "symfony/var-exporter": "^4.4 || ^5.4 || ^6.2 || ^7.0",
                 "symfony/yaml": "^3.4 || ^4.0 || ^5.0 || ^6.0 || ^7.0",
-                "vimeo/psalm": "4.30.0 || 5.16.0"
+                "vimeo/psalm": "4.30.0 || 5.22.2"
             },
             "suggest": {
                 "ext-dom": "Provides support for XSD validation for XML mapping files",
@@ -1258,22 +1258,22 @@
             ],
             "support": {
                 "issues": "https://github.com/doctrine/orm/issues",
-                "source": "https://github.com/doctrine/orm/tree/2.18.1"
+                "source": "https://github.com/doctrine/orm/tree/2.19.0"
             },
-            "time": "2024-02-22T12:22:44+00:00"
+            "time": "2024-03-03T17:43:41+00:00"
         },
         {
             "name": "doctrine/persistence",
-            "version": "3.2.0",
+            "version": "3.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/persistence.git",
-                "reference": "63fee8c33bef740db6730eb2a750cd3da6495603"
+                "reference": "b6fd1f126b13c1f7e7321f7338b14a19116b5de4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/persistence/zipball/63fee8c33bef740db6730eb2a750cd3da6495603",
-                "reference": "63fee8c33bef740db6730eb2a750cd3da6495603",
+                "url": "https://api.github.com/repos/doctrine/persistence/zipball/b6fd1f126b13c1f7e7321f7338b14a19116b5de4",
+                "reference": "b6fd1f126b13c1f7e7321f7338b14a19116b5de4",
                 "shasum": ""
             },
             "require": {
@@ -1342,7 +1342,7 @@
             ],
             "support": {
                 "issues": "https://github.com/doctrine/persistence/issues",
-                "source": "https://github.com/doctrine/persistence/tree/3.2.0"
+                "source": "https://github.com/doctrine/persistence/tree/3.3.1"
             },
             "funding": [
                 {
@@ -1358,7 +1358,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-05-17T18:32:04+00:00"
+            "time": "2024-03-01T19:53:13+00:00"
         },
         {
             "name": "doctrine/sql-formatter",
@@ -2027,12 +2027,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/siganushka/generic-bundle.git",
-                "reference": "0c592c46bf7ef9196ef6ec636dd6a36f1d13410c"
+                "reference": "fc49ea99fccbbf2321be2dc02b15b61ec0a6d99d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/siganushka/generic-bundle/zipball/0c592c46bf7ef9196ef6ec636dd6a36f1d13410c",
-                "reference": "0c592c46bf7ef9196ef6ec636dd6a36f1d13410c",
+                "url": "https://api.github.com/repos/siganushka/generic-bundle/zipball/fc49ea99fccbbf2321be2dc02b15b61ec0a6d99d",
+                "reference": "fc49ea99fccbbf2321be2dc02b15b61ec0a6d99d",
                 "shasum": ""
             },
             "require": {
@@ -2076,9 +2076,9 @@
             "description": "Generic bundle for symfony.",
             "support": {
                 "issues": "https://github.com/siganushka/generic-bundle/issues",
-                "source": "https://github.com/siganushka/generic-bundle/tree/main"
+                "source": "https://github.com/siganushka/generic-bundle/tree/dev"
             },
-            "time": "2024-02-27T06:25:02+00:00"
+            "time": "2024-03-04T04:13:01+00:00"
         },
         {
             "name": "siganushka/media-bundle",
@@ -2086,7 +2086,7 @@
             "dist": {
                 "type": "path",
                 "url": "../media-bundle",
-                "reference": "e10431c0dcb5e23eec44a06355fa6b28a9854c2b"
+                "reference": "017db5c8b65b3a67f1b3e42da49214425f197d19"
             },
             "require": {
                 "doctrine/doctrine-bundle": "^2.7",
@@ -2143,7 +2143,7 @@
             "dist": {
                 "type": "path",
                 "url": "../order-bundle",
-                "reference": "c97e40b9aa3077e9476a03ad1483151702cf658f"
+                "reference": "ecb9ac35bcbba1139e94103ec045b0e54810f4a8"
             },
             "require": {
                 "doctrine/doctrine-bundle": "^2.7",
@@ -2198,7 +2198,7 @@
             "dist": {
                 "type": "path",
                 "url": "../product-bundle",
-                "reference": "397a8e2b33ec972760084cc2dc1930bb3d56698d"
+                "reference": "7a2535d29a87ffa6c9e1bc2627dfb52021dd4ebe"
             },
             "require": {
                 "bentools/cartesian-product": "^1.4",
@@ -3355,16 +3355,16 @@
         },
         {
             "name": "symfony/flex",
-            "version": "v1.21.5",
+            "version": "v1.21.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/flex.git",
-                "reference": "6b46a001639f810d01f4f1b39be1291192a711d4"
+                "reference": "06b58a5e5b4c6528fb12e0fac5fea0db3f1e7ae8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/flex/zipball/6b46a001639f810d01f4f1b39be1291192a711d4",
-                "reference": "6b46a001639f810d01f4f1b39be1291192a711d4",
+                "url": "https://api.github.com/repos/symfony/flex/zipball/06b58a5e5b4c6528fb12e0fac5fea0db3f1e7ae8",
+                "reference": "06b58a5e5b4c6528fb12e0fac5fea0db3f1e7ae8",
                 "shasum": ""
             },
             "require": {
@@ -3400,7 +3400,7 @@
             "description": "Composer plugin for Symfony",
             "support": {
                 "issues": "https://github.com/symfony/flex/issues",
-                "source": "https://github.com/symfony/flex/tree/v1.21.5"
+                "source": "https://github.com/symfony/flex/tree/v1.21.6"
             },
             "funding": [
                 {
@@ -3416,7 +3416,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-02-05T18:04:39+00:00"
+            "time": "2024-03-02T08:16:37+00:00"
         },
         {
             "name": "symfony/form",
@@ -7412,16 +7412,16 @@
         },
         {
             "name": "sebastian/diff",
-            "version": "4.0.5",
+            "version": "4.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/diff.git",
-                "reference": "74be17022044ebaaecfdf0c5cd504fc9cd5a7131"
+                "reference": "ba01945089c3a293b01ba9badc29ad55b106b0bc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/diff/zipball/74be17022044ebaaecfdf0c5cd504fc9cd5a7131",
-                "reference": "74be17022044ebaaecfdf0c5cd504fc9cd5a7131",
+                "url": "https://api.github.com/repos/sebastianbergmann/diff/zipball/ba01945089c3a293b01ba9badc29ad55b106b0bc",
+                "reference": "ba01945089c3a293b01ba9badc29ad55b106b0bc",
                 "shasum": ""
             },
             "require": {
@@ -7466,7 +7466,7 @@
             ],
             "support": {
                 "issues": "https://github.com/sebastianbergmann/diff/issues",
-                "source": "https://github.com/sebastianbergmann/diff/tree/4.0.5"
+                "source": "https://github.com/sebastianbergmann/diff/tree/4.0.6"
             },
             "funding": [
                 {
@@ -7474,7 +7474,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-05-07T05:35:17+00:00"
+            "time": "2024-03-02T06:30:58+00:00"
         },
         {
             "name": "spatie/array-to-xml",
@@ -7963,8 +7963,8 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "siganushka/media-bundle": 20,
-        "siganushka/product-bundle": 20,
-        "siganushka/order-bundle": 20
+        "siganushka/order-bundle": 20,
+        "siganushka/product-bundle": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

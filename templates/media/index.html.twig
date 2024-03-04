@@ -22,15 +22,15 @@
         <td>{{ entity.size }}</td>
         <td>{{ entity.width and entity.height ? entity.width ~ '*' ~ entity.height : '-' }}</td>
         <td>
-          <span class="badge rounded-pill text-bg-{{ entity.image ? 'success' : 'secondary' }}">{{ entity.image ? '是' : '否' }}</span>
+          <span class="badge rounded-pill text-bg-{{ entity.image ? 'success' : 'secondary' }}">{{ entity.image ? 'generic.yes'|trans : 'generic.no'|trans }}</span>
         </td>
         <td>
-          <a href="{{ path('app_media_delete', { hash: entity.hash }) }}" onclick="return confirm('确定删除码？')">{{ 'generic.delete'|trans }}</a>
+          <a href="{{ path('app_media_delete', { hash: entity.hash }) }}" onclick="return confirm('{{ 'generic.delete_confirmation'|trans }}')">{{ 'generic.delete'|trans }}</a>
         </td>
       </tr>
       {% else %}
       <tr>
-        <td colspan="65536" class="text-center text-body-secondary">没有记录！</td>
+        <td colspan="65536" class="text-center text-body-secondary">{{ 'generic.no_items'|trans }}</td>
       </tr>
       {% endfor %}
     </table>

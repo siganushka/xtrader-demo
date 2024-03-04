@@ -4,13 +4,17 @@
 /.env.*.local
 /config/secrets/prod/prod.decrypt.private.php
 /public/bundles/
+/public/uploads/
 /var/
 /vendor/
 ###< symfony/framework-bundle ###
 
+###> symfony/phpunit-bridge ###
+.phpunit.result.cache
+/phpunit.xml
+###< symfony/phpunit-bridge ###
+
 ###> app ###
-/.phpunit.result.cache
 /.php-cs-fixer.php
 /.php-cs-fixer.cache
-/phpunit.xml
 ###< app ###

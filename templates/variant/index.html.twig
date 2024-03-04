@@ -10,7 +10,7 @@
         <th style="min-width: 280px">{{ 'product.variant.option_values'|trans }}</th>
         <th style="min-width: 100px">{{ 'product.variant.price'|trans }}</th>
         <th style="min-width: 100px">{{ 'product.variant.inventory'|trans }}</th>
-        <th style="min-width: 100px">操作</th>
+        <th style="min-width: 100px">{{ 'generic.action'|trans }}</th>
       </tr>
       {% for entity in pagination %}
       <tr>
@@ -19,13 +19,13 @@
         <td>{{ entity.price|money }}</td>
         <td>{{ entity.inventory|default('-') }}</td>
         <td>
-          <a href="{{ path('app_productvariant_edit', { id: entity.id }) }}">编辑</a>
-          <a href="{{ path('app_productvariant_delete', { id: entity.id }) }}" onclick="return confirm('确定删除码？')">删除</a>
+          <a href="{{ path('app_productvariant_edit', { id: entity.id }) }}">{{ 'generic.edit'|trans }}</a>
+          <a href="{{ path('app_productvariant_delete', { id: entity.id }) }}" onclick="return confirm('{{ 'generic.delete_confirmation'|trans }}')">{{ 'generic.delete'|trans }}</a>
         </td>
       </tr>
       {% else %}
       <tr>
-        <td colspan="65536" class="text-center text-body-secondary">没有记录！</td>
+        <td colspan="65536" class="text-center text-body-secondary">{{ 'generic.no_items'|trans }}</td>
       </tr>
       {% endfor %}
     </table>

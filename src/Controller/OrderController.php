@@ -61,10 +61,10 @@ class OrderController extends AbstractController
             $eventDispatcher->dispatch($event);
 
             $adjustment1 = new OrderAdjustment();
-            $adjustment1->setAmount(random_int(100, 999));
+            $adjustment1->setAmount(100);
 
             $adjustment2 = new OrderAdjustment();
-            $adjustment2->setAmount(-random_int(100, 999));
+            $adjustment2->setAmount(-200);
 
             $entity->addAdjustment($adjustment1);
             $entity->addAdjustment($adjustment2);
