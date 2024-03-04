@@ -81,28 +81,5 @@
             "allow-contrib": false,
             "require": "5.4.*"
         }
-    },
-    "repositories": [
-        {
-            "type": "path",
-            "url": "../media-bundle",
-            "options": {
-                "symlink": true
-            }
-        },
-        {
-            "type": "path",
-            "url": "../product-bundle",
-            "options": {
-                "symlink": true
-            }
-        },
-        {
-            "type": "path",
-            "url": "../order-bundle",
-            "options": {
-                "symlink": true
-            }
-        }
-    ]
+    }
 }
