@@ -1,0 +1,78 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<p>
+  <a href="{{ path('app_order_index') }}" class="btn btn-primary">返回</a>
+</p>
+<table class="table table-bordered table-striped">
+  <tr>
+    <th class="text-end" width="20%">{{ 'order.number'|trans }}</th>
+    <td width="80%"><code>{{ entity.number }}</code></td>
+  </tr>
+  <tr>
+    <th class="text-end">{{ 'order.items_total'|trans }}</th>
+    <td>{{ entity.itemsTotal|money }}</td>
+  </tr>
+  <tr>
+    <th class="text-end">{{ 'order.adjustments_total'|trans }}</th>
+    <td>
+      {% if entity.adjustmentsTotal > 0 %}
+        <span class="text-danger">+{{ entity.adjustmentsTotal|money }}</span>
+      {% else %}
+        <span class="text-success">{{ entity.adjustmentsTotal|money }}</span>
+      {% endif %}
+    </td>
+  </tr>
+  <tr>
+    <th class="text-end">{{ 'order.total'|trans }}</th>
+    <td>{{ entity.total|money }}</td>
+  </tr>
+  <tr>
+    <th class="text-end">{{ 'generic.created_at'|trans }}</th>
+    <td>{{ entity.createdAt|date('Y-m-d H:i:s') }}</td>
+  </tr>
+  <tr>
+    <th class="text-end">{{ 'order.items'|trans }}</th>
+    <td>
+      <table class="table table-sm table-borderless m-0">
+        <tr>
+          <th class="pt-0">{{ 'order_item.variant'|trans }}</th>
+          <th class="pt-0 text-end">{{ 'order_item.unit_price'|trans }}</th>
+          <th class="pt-0 text-end">{{ 'order_item.quantity'|trans }}</th>
+          <th class="pt-0 text-end">{{ 'order_item.subtotal'|trans }}</th>
+        </tr>
+        {% for item in entity.items %}
+        <tr>
+          <td>{{ item.variant.descriptor }}</td>
+          <td class="text-end">{{ item.unitPrice|money }}</td>
+          <td class="text-end">{{ item.quantity }}</td>
+          <td class="text-end">{{ item.subtotal|money }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+    </td>
+  </tr>
+  {% if entity.adjustments|length %}
+  <tr>
+    <th class="text-end">{{ 'order.adjustments'|trans }}</th>
+    <td class="text-end">
+      {% for adjustment in entity.adjustments %}
+        {% if adjustment.amount > 0 %}
+          <span class="text-danger">运费 +{{ adjustment.amount|money }}</span>
+        {% else %}
+          <span class="text-success">优惠 {{ adjustment.amount|money }}</span>
+        {% endif %}
+        <br />
+      {% endfor %}
+    </td>
+  </tr>
+  {% endif %}
+  <tr>
+    <td colspan="65535" class="text-end">
+      总计 <strong class="text-danger">{{ entity.itemsTotal|money }}</strong>
+      <br />
+      应付 <strong class="text-danger">{{ entity.total|money }}</strong>
+    </td>
+  </tr>
+</table>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+  <h3>MediaBundle</h3>
+
+  <div class="overflow-x-auto my-3">
+    <table class="table table-striped table-hover m-0">
+      <tr>
+        <th style="min-width: 240px">{{ 'media.name'|trans }}</th>
+        <th style="min-width: 60px">{{ 'media.extension'|trans }}</th>
+        <th style="min-width: 160px">{{ 'media.mimeType'|trans }}</th>
+        <th style="min-width: 80px">{{ 'media.size'|trans }}</th>
+        <th style="min-width: 100px">{{ 'media.pixel'|trans }}</th>
+        <th style="min-width: 80px">{{ 'media.image'|trans }}</th>
+        <th style="min-width: 80px">{{ 'generic.action'|trans }}</th>
+      </tr>
+      {% for entity in pagination %}
+      <tr>
+        <td><a href="{{ entity.url }}" target="_blank" class="d-inline-block text-truncate" style="max-width: 200px" title="{{ entity.name }}">{{ entity.name }}</a></td>
+        <td>{{ entity.extension }}</td>
+        <td>{{ entity.mimeType }}</td>
+        <td>{{ entity.size }}</td>
+        <td>{{ entity.width and entity.height ? entity.width ~ '*' ~ entity.height : '-' }}</td>
+        <td>
+          <span class="badge rounded-pill text-bg-{{ entity.image ? 'success' : 'secondary' }}">{{ entity.image ? '是' : '否' }}</span>
+        </td>
+        <td>
+          <a href="{{ path('app_media_delete', { hash: entity.hash }) }}" onclick="return confirm('确定删除码？')">{{ 'generic.delete'|trans }}</a>
+        </td>
+      </tr>
+      {% else %}
+      <tr>
+        <td colspan="65536" class="text-center text-body-secondary">没有记录！</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+
+  {% if pagination.totalItemCount %}
+  <div class="pagination justify-content-center">
+    {{ knp_pagination_render(pagination) }}
+  </div>
+  {% endif %}
+{% endblock %}

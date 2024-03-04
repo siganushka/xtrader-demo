@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+  <h3 class="mb-3">ProductBundle</h3>
+
+  <p>
+    <a href="{{ path('app_product_new') }}" class="btn btn-primary">添加</a>
+  </p>
+
+  <div class="overflow-x-auto my-3">
+    <table class="table table-striped table-hover m-0">
+      <tr class="table-light">
+        <th style="min-width: 60px">ID</th>
+        <th style="min-width: 80px">{{ 'product.img'|trans }}</th>
+        <th style="min-width: 260px">{{ 'product.name'|trans }}</th>
+        <th style="min-width: 160px">{{ 'product.options'|trans }}</th>
+        <th style="min-width: 140px">操作</th>
+      </tr>
+      {% for entity in pagination %}
+      <tr>
+        <td>{{ entity.id }}</td>
+        <td><img src="{{ entity.img.url }}" width="50px"></td>
+        <td>{{ entity.name }}
+          {% if entity.optionally %}
+            ({{ entity.variants|length }}/{{ entity.combinedOptionValues|length }})
+          {% endif %}
+        </td>
+        <td>
+          {% for option in entity.options %}
+            <span class="badge text-bg-primary">{{ option.name }}</span>
+          {% else %}
+            <span class="badge text-bg-secondary">无</span>
+          {% endfor %}
+        </td>
+        <td>
+          <a href="{{ path('app_productvariant_index', { productId: entity.id }) }}">库存</a>
+          <a href="{{ path('app_product_edit', { id: entity.id }) }}">编辑</a>
+          <a href="{{ path('app_product_delete', { id: entity.id }) }}" onclick="return confirm('确定删除码？')">删除</a>
+        </td>
+      </tr>
+      {% else %}
+      <tr>
+        <td colspan="65536" class="text-center text-body-secondary">没有记录！</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+
+  {% if pagination.totalItemCount %}
+  <div class="pagination justify-content-center">
+    {{ knp_pagination_render(pagination) }}
+  </div>
+  {% endif %}
+{% endblock %}

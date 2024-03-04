@@ -1,0 +1,3 @@
+siganushka_generic:
+    doctrine:
+        table_prefix: app_

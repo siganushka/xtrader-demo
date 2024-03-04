@@ -1,0 +1,11 @@
+siganushka_media:
+    resource: "@SiganushkaMediaBundle/Resources/config/routes.php"
+    prefix: /api
+
+siganushka_product:
+    resource: "@SiganushkaProductBundle/Resources/config/routes.php"
+    prefix: /api
+
+siganushka_order:
+    resource: "@SiganushkaOrderBundle/Resources/config/routes.php"
+    prefix: /api
