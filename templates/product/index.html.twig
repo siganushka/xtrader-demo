@@ -13,7 +13,7 @@
         <th style="min-width: 60px">ID</th>
         <th style="min-width: 80px">{{ 'product.img'|trans }}</th>
         <th style="min-width: 260px">{{ 'product.name'|trans }}</th>
-        <th style="min-width: 100px">{{ 'product.variants'|trans }}</th>
+        <th style="min-width: 80px">{{ 'product.variants'|trans }}</th>
         <th style="min-width: 140px">{{ 'generic.action'|trans }}</th>
       </tr>
       {% for entity in pagination %}
@@ -23,12 +23,12 @@
         <td><p class="m-0 text-break">{{ entity.name }}</p>
           <small class="text-secondary">
             {% for option in entity.options %}
-              {{ option.name ~ (loop.last ? '' : ', ') }}
+              {{ option.name ~ (not loop.last ? ', ') }}
             {% endfor %}
           </small>
         </td>
         <td>
-          <small class="badge text-bg-secondary">{{ entity.variants|length }}/{{ entity.combinedOptionValues|length }}</small>
+          <small class="badge text-bg-secondary">{{ entity.variants|length }}/{{ entity.generatedVariants|length }}</small>
         </td>
         <td>
           <a href="{{ path('app_productvariant_index', { productId: entity.id }) }}">{{ 'product.variants'|trans }}</a>

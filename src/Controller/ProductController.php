@@ -6,7 +6,6 @@ namespace App\Controller;
 
 use Doctrine\ORM\EntityManagerInterface;
 use Knp\Component\Pager\PaginatorInterface;
-use Siganushka\ProductBundle\Entity\Option;
 use Siganushka\ProductBundle\Form\ProductType;
 use Siganushka\ProductBundle\Form\ProductVariantCollectionType;
 use Siganushka\ProductBundle\Form\ProductVariantType;
@@ -49,10 +48,9 @@ class ProductController extends AbstractController
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
         $entity = $this->productRepository->createNew();
-        // $entity->addOption($entityManager->find(Option::class, 1));
 
         $form = $this->createForm(ProductType::class, $entity);
-        $form->add('save', SubmitType::class, ['label' => 'generic.save']);
+        $form->add('submit', SubmitType::class, ['label' => 'generic.submit']);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -80,7 +78,7 @@ class ProductController extends AbstractController
         }
 
         $form = $this->createForm(ProductType::class, $entity);
-        $form->add('Submit', SubmitType::class, ['label' => 'generic.save']);
+        $form->add('save', SubmitType::class, ['label' => 'generic.save']);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
