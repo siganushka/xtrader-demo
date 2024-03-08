@@ -6,6 +6,8 @@ namespace App\Controller;
 
 use Doctrine\ORM\EntityManagerInterface;
 use Knp\Component\Pager\PaginatorInterface;
+use Siganushka\ProductBundle\Form\ProductOptionType;
+use Siganushka\ProductBundle\Form\ProductOptionValueType;
 use Siganushka\ProductBundle\Form\ProductType;
 use Siganushka\ProductBundle\Form\ProductVariantCollectionType;
 use Siganushka\ProductBundle\Form\ProductVariantType;
@@ -116,6 +118,44 @@ class ProductController extends AbstractController
     public function ProductType(Request $request): Response
     {
         $form = $this->createForm(ProductType::class)
+            ->add('Submit', SubmitType::class, ['label' => 'generic.submit'])
+        ;
+
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            dd(__METHOD__, $form->getData());
+        }
+
+        return $this->render('product/form.html.twig', [
+            'form' => $form->createView(),
+        ]);
+    }
+
+    /**
+     * @Route("/products/ProductOptionType")
+     */
+    public function ProductOptionType(Request $request): Response
+    {
+        $form = $this->createForm(ProductOptionType::class)
+            ->add('Submit', SubmitType::class, ['label' => 'generic.submit'])
+        ;
+
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            dd(__METHOD__, $form->getData());
+        }
+
+        return $this->render('product/form.html.twig', [
+            'form' => $form->createView(),
+        ]);
+    }
+
+    /**
+     * @Route("/products/ProductOptionValueType")
+     */
+    public function ProductOptionValueType(Request $request): Response
+    {
+        $form = $this->createForm(ProductOptionValueType::class)
             ->add('Submit', SubmitType::class, ['label' => 'generic.submit'])
         ;
 
