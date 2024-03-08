@@ -28,7 +28,13 @@
           </small>
         </td>
         <td>
-          <small class="badge text-bg-secondary">{{ entity.variants|length }}/{{ entity.generatedVariants|length }}</small>
+          {% set _variantCount = entity.variants|length %}
+          {% set _generatedCount = entity.generatedVariants|length %}
+          {% if _variantCount < _generatedCount %}
+            <small class="badge text-bg-danger">{{ _variantCount }}/{{ _generatedCount }}</small>
+          {% else %}
+            <small class="badge text-bg-success">{{ _variantCount }}/{{ _generatedCount }}</small>
+          {% endif %}
         </td>
         <td>
           <a href="{{ path('app_productvariant_index', { productId: entity.id }) }}">{{ 'product.variants'|trans }}</a>

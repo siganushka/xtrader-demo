@@ -96,12 +96,14 @@ class MediaController extends AbstractController
             ->add('media', MediaType::class, [
                 'label' => 'media.file',
                 'constraints' => new NotBlank(),
+                'style' => null,
                 'disabled' => false,
             ])
             ->add('media2', MediaType::class, [
                 'label' => 'media.file',
                 'channel' => TestPdf::class,
                 'constraints' => new NotBlank(),
+                'style' => 'width: 640px; height: 320px',
                 'disabled' => false,
             ])
             ->add('Submit', SubmitType::class, ['label' => 'generic.submit'])
