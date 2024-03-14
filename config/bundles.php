@@ -15,4 +15,5 @@ return [
     Siganushka\MediaBundle\SiganushkaMediaBundle::class => ['all' => true],
     Siganushka\ProductBundle\SiganushkaProductBundle::class => ['all' => true],
     Siganushka\OrderBundle\SiganushkaOrderBundle::class => ['all' => true],
+    Nelmio\CorsBundle\NelmioCorsBundle::class => ['all' => true],
 ];

@@ -22,7 +22,8 @@
         <td>
           {% for item in entity.items %}
             <p class="mb-{{ loop.last ? 0 : 1 }}">
-              {{ item.variant.descriptor }}
+              {{ item.variant.product.name }}
+              {% if item.variant.optionValues is not empty %}【{{ item.variant.optionValues.label }}】{% endif %}
               <small class="text-secondary">&times;{{ item.quantity }}</small>
             </p>
           {% endfor %}

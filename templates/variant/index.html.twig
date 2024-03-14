@@ -15,7 +15,10 @@
       {% for entity in pagination %}
       <tr>
         <td>{{ entity.id }}</td>
-        <td>{{ entity.descriptor }}</td>
+        <td>
+          {{ entity.product.name }}
+          {% if entity.optionValues is not empty %}【{{ entity.optionValues.label }}】{% endif %}
+        </td>
         <td>{{ entity.price|money }}</td>
         <td>{{ entity.inventory|default('-') }}</td>
         <td>

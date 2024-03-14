@@ -29,7 +29,7 @@
         </td>
         <td>
           {% set _variantCount = entity.variants|length %}
-          {% set _generatedCount = entity.generatedVariants|length %}
+          {% set _generatedCount = entity.combinedOptionValues|length %}
           {% if _variantCount < _generatedCount %}
             <small class="badge text-bg-danger">{{ _variantCount }}/{{ _generatedCount }}</small>
           {% else %}

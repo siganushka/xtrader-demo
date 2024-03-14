@@ -33,7 +33,10 @@
         </tr>
         {% for item in entity.items %}
         <tr>
-          <td>{{ item.variant.descriptor }}</td>
+          <td>
+            {{ item.variant.product.name }}
+            {% if item.variant.optionValues is not empty %}【{{ item.variant.optionValues.label }}】{% endif %}
+          </td>
           <td class="text-end">{{ item.unitPrice|money }}</td>
           <td class="text-end">{{ item.quantity }}</td>
           <td class="text-end">{{ item.subtotal|money }}</td>
