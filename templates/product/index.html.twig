@@ -28,12 +28,12 @@
           </small>
         </td>
         <td>
-          {% set _variantCount = entity.variants|length %}
-          {% set _generatedCount = entity.combinedOptionValues|length %}
-          {% if _variantCount < _generatedCount %}
-            <small class="badge text-bg-danger">{{ _variantCount }}/{{ _generatedCount }}</small>
+          {% set _variants = entity.variants|length %}
+          {% set _combinedOptionValues = entity.optionally ? entity.combinedOptionValues|length : 1 %}
+          {% if _variants < _combinedOptionValues %}
+            <small class="badge text-bg-danger">{{ _variants }}/{{ _combinedOptionValues }}</small>
           {% else %}
-            <small class="badge text-bg-success">{{ _variantCount }}/{{ _generatedCount }}</small>
+            <small class="badge text-bg-success">{{ _variants }}/{{ _combinedOptionValues }}</small>
           {% endif %}
         </td>
         <td>

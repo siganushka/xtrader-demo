@@ -16,8 +16,10 @@
       <tr>
         <td>{{ entity.id }}</td>
         <td>
-          {{ entity.product.name }}
-          {% if entity.optionValues is not empty %}【{{ entity.optionValues.label }}】{% endif %}
+          <span class="d-inline-block text-truncate" style="max-width: 560px;">
+            {{ entity.product.name }}
+            {% if entity.optionValues is not empty %}【{{ entity.optionValues.label }}】{% endif %}
+          </span>
         </td>
         <td>{{ entity.price|money }}</td>
         <td>{{ entity.inventory|default('-') }}</td>
