@@ -23,7 +23,7 @@
         <td><p class="m-0 text-break">{{ entity.name }}</p>
           <small class="text-secondary">
             {% for option in entity.options %}
-              {{ option.name ~ (not loop.last ? ', ') }}
+              <a href="{{ path('app_productoption_edit', { id: option.id }) }}" class="link-secondary">{{ option.name }}</a>
             {% endfor %}
           </small>
         </td>
@@ -37,7 +37,7 @@
           {% endif %}
         </td>
         <td>
-          <a href="{{ path('app_productvariant_index', { productId: entity.id }) }}">{{ 'product.variants'|trans }}</a>
+          <a href="{{ path('app_product_variants', { id: entity.id }) }}">{{ 'product.variants'|trans }}</a>
           <a href="{{ path('app_product_edit', { id: entity.id }) }}">{{ 'generic.edit'|trans }}</a>
           <a href="{{ path('app_product_delete', { id: entity.id }) }}" onclick="return confirm('{{ 'generic.delete_confirmation'|trans }}')">{{ 'generic.delete'|trans }}</a>
         </td>

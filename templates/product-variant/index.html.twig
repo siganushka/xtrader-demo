@@ -25,7 +25,6 @@
         <td>{{ entity.inventory|default('-') }}</td>
         <td>
           <a href="{{ path('app_productvariant_edit', { id: entity.id }) }}">{{ 'generic.edit'|trans }}</a>
-          <a href="{{ path('app_productvariant_delete', { id: entity.id }) }}" onclick="return confirm('{{ 'generic.delete_confirmation'|trans }}')">{{ 'generic.delete'|trans }}</a>
         </td>
       </tr>
       {% else %}

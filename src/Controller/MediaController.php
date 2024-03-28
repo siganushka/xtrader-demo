@@ -14,6 +14,7 @@ use Siganushka\MediaBundle\Form\Type\MediaType;
 use Siganushka\MediaBundle\Repository\MediaRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\FormError;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -87,30 +88,44 @@ class MediaController extends AbstractController
      */
     public function MediaType(Request $request): Response
     {
+        $media = $this->mediaRepository->findAll();
         $data = [
-            // 'media' => $this->mediaRepository->findOneByHash('dffdf3289212667417670efc2691afa2'),
-            // 'media2' => $this->mediaRepository->findOneByHash('c7cf461b0bac1b418829785005c24746'),
+            'media1' => $media[0] ?? null,
         ];
 
         $builder = $this->createFormBuilder($data)
-            ->add('media', MediaType::class, [
-                'label' => 'media.file',
-                'constraints' => new NotBlank(),
-                'style' => null,
-                'disabled' => false,
+            ->add('media0', MediaType::class, [
+                'label' => '默认状态',
+            ])
+            ->add('media1', MediaType::class, [
+                'label' => '有值状态',
             ])
             ->add('media2', MediaType::class, [
-                'label' => 'media.file',
+                'label' => '错误状态',
+            ])
+            ->add('media3', MediaType::class, [
+                'label' => '禁用状态',
+                'disabled' => true,
+            ])
+            ->add('media4', MediaType::class, [
+                'label' => '自定义尺寸',
+                'style' => 'width: 100%; height: 240px',
+            ])
+            ->add('media5', MediaType::class, [
+                'label' => '自定义文件类型',
                 'channel' => TestPdf::class,
+            ])
+            ->add('media6', MediaType::class, [
+                'label' => '自定义表单验证',
                 'constraints' => new NotBlank(),
-                'style' => 'width: 640px; height: 320px',
-                'disabled' => false,
             ])
             ->add('Submit', SubmitType::class, ['label' => 'generic.submit'])
         ;
 
         $form = $builder->getForm();
         $form->handleRequest($request);
+
+        $form['media2']->addError(new FormError('This value should not be blank.'));
 
         if ($form->isSubmitted() && $form->isValid()) {
             dd(__METHOD__, $form->getData());

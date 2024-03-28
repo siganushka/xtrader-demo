@@ -113,6 +113,35 @@ class ProductController extends AbstractController
     }
 
     /**
+     * @Route("/products/{id<\d+>}/variants")
+     */
+    public function variants(Request $request, EntityManagerInterface $entityManager, int $id): Response
+    {
+        $product = $this->productRepository->find($id);
+        if (!$product) {
+            throw $this->createNotFoundException(sprintf('Resource #%d not found.', $id));
+        }
+
+        $form = $this->createForm(ProductVariantCollectionType::class, $product);
+        $form->add('submit', SubmitType::class, ['label' => 'generic.save']);
+        $form->handleRequest($request);
+        // dd($form->createView());
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            // dd(__METHOD__, $product->getVariants()->toArray());
+
+            $entityManager->flush();
+            $this->addFlash('success', 'Your changes were saved!');
+
+            return $this->redirectToRoute('app_product_index');
+        }
+
+        return $this->render('product/form.html.twig', [
+            'form' => $form->createView(),
+        ]);
+    }
+
+    /**
      * @Route("/products/ProductType")
      */
     public function ProductType(Request $request): Response

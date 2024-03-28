@@ -2149,7 +2149,7 @@
             "dist": {
                 "type": "path",
                 "url": "../media-bundle",
-                "reference": "e7097b497ea3c6a8476052d06cad8300f769eec7"
+                "reference": "7dd2c2cc770d4653250f3628b5f79ea2739ca8de"
             },
             "require": {
                 "doctrine/doctrine-bundle": "^2.7",
@@ -2261,7 +2261,7 @@
             "dist": {
                 "type": "path",
                 "url": "../product-bundle",
-                "reference": "876fc2bf35c30046b37e908191d9ccf9ea8c27a7"
+                "reference": "8b729ca9ecf6888f7555af79f228474102a69684"
             },
             "require": {
                 "bentools/cartesian-product": "^1.4",
